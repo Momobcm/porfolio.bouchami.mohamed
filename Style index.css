@@ -1,0 +1,13 @@
+element.style {
+}
+body {
+    background-color: #336B87;
+    font-size: 30px;
+    text-align: center;
+}
+
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
