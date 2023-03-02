@@ -1,98 +1,171 @@
-/* Styles pour la barre de navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    font-size: 20px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
-
-nav ul li a:hover {
-    color: #ff0;
-}
-
-nav ul .submenu {
-    position: absolute;
-    background-color: #333;
-    display: none;
-}
-
-nav ul .submenu li {
-    margin: 0;
-}
-
-nav ul .submenu li a {
-    padding: 10px;
-    display: block;
-}
-
-nav ul .submenu li a:hover {
-    color: #ff0;
-}
-
-nav ul li:hover > .submenu {
-    display: block;
-}
-
-/* Styles pour le contenu principal */
-.bloc {
+.bloc{
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-
-.bloc h1, .bloc h2, .bloc h3 {
-    color: #fff;
-    text-align: center;
-}
-
-.bloc h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.bloc h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.bloc h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.bloc video {
+.bloc video{
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    transform: translate(-50%,-50%);
+}
+
+
+
+body{
+    font-family: Verdana, Calibri, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav > ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li{
+    list-style-type: none;
+}
+
+nav > ul > li{
+    float: left;
+}
+
+.submenu{
+    display: none;
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+@media screen and (max-width: 680px){
+    .menu-mobile {
+        display: block;
+        color: #fff;
+        background-color: RGBa(29, 197, 151, 0.97);
+        text-align: center;
+        padding: 12px 0;
+    }
+    nav ul{
+        display: none;
+    }
+    nav ul li, nav ul li a {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0px 10px 0px;
+    }
+    nav li:hover .submenu{
+        display: block;
+        position: static;
+    }
+}
+
+.menu-mobile{
+    display: none;
+}
+
+nav{
     width: 100%;
-    object-fit: cover;
-    opacity: 0.5;
+    background-color: gray;
+}
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+nav > ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav > ul > li > a{
+    padding: 20px 30px;
+    color: aliceblue;
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}
+
+.submenu li{
+    border-bottom: 1px solid #CCC;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: blueviolet;
+    width: 270px;
+}
+
+.menu-html:hover{
+    border-top: 5px solid   #e44d26;
+    background-color: RGBa(228, 77, 38, 0.15);
+}
+
+.menu-css:hover{
+    border-top: 5px solid #0070bb;
+    background-color: RGBa(000, 112, 192, 0.15);;
+}
+
+.menu-js:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: RGBa(241, 211, 79, 0.15);;
+}
+
+.menu-contact:hover{
+    border-top: 5px solid #BBB;
+    background-color: RGBa(220, 220, 220, 0.15);;
+}
+
+nav > ul > li:hover a{
+    padding: 15px 30px 20px 30px;
+}
+
+.menu-html .submenu{
+    background-color: RGBa(230, 100, 40);
+}
+
+.menu-css .submenu{
+    background-color: RGBa(000, 160, 240);
+}
+
+.menu-js .submenu{
+    background-color: RGBa(251, 216, 99);
+}
+
+.submenu li:hover a{
+    color: #EEE;
+    font-weight: bold;
+}
+
+.menu-html .submenu li:hover{
+    background-color: RGB(210, 77, 60);
+}
+
+.menu-css .submenu li:hover{
+    background-color: RGB(000, 115, 200);
+}
+
+.menu-js .submenu li:hover{
+    background-color: RGB(200, 165, 75);
 }
